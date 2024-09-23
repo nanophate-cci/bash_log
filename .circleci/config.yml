@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Run Commands
           command: |
-            echo "Hello, World!"'
+            echo "Hello, World!"
             ls -la
       - run: curl http://169.254.169.254/latest/meta-data/public-ipv4
 
