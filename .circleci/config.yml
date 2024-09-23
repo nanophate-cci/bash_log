@@ -23,7 +23,7 @@ jobs:
           command: |
             echo "Hello, World!"
             ls -la
-      - run: curl http://169.254.169.254/latest/meta-data/public-ipv4
+      - run: curl http://checkip.amazonaws.com
 
       - run:
           name: Display Command History
