@@ -3,28 +3,11 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/base:current
     steps:
       - checkout
 
       - run:
           name: Configure Bash for Command Logging
-          command: |
-            echo 'export HISTFILE=~/.bash_history' >> ~/.bashrc
-            echo 'export HISTSIZE=10000' >> ~/.bashrc
-            echo 'export HISTFILESIZE=20000' >> ~/.bashrc
-            echo 'export HISTTIMEFORMAT="%F %T "' >> ~/.bashrc
-            echo 'shopt -s histappend' >> ~/.bashrc
-            echo 'PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"' >> ~/.bashrc
-            source ~/.bashrc
+          command: echo holla 
 
-      - run:
-          name: Run Commands
-          command: |
-            echo "Hello, World!"
-            ls -la
-      - run: curl http://checkip.amazonaws.com
-
-      - run:
-          name: Display Command History
-          command: cat ~/.bash_history
